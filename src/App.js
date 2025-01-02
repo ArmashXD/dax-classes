@@ -1,9 +1,10 @@
-import './styles/index.css'
+import './styles/index.css';
 
-import Counter from "./components/counter";
+import BasicFormikControlledExample from './pages/home/components/forms/formik-controlled-example';
 
 function App() {
-  return <Counter />;
+  return <BasicFormikControlledExample />
+
 }
 
 export default App;
