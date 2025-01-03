@@ -1,5 +1,5 @@
-import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import React, { useRef } from 'react';
+import { Formik, Form, Field, ErrorMessage, useFormik } from 'formik';
 import { simpleExampleValidationSchema } from '../../../../validations/simple-example.validation-schema';
 
 const initialValues = {
@@ -8,10 +8,14 @@ const initialValues = {
     age: '',
 };
 
-const BasicFormikControlledExample = () => {
+const BasicUncontrolledFormExample = () => {
+
+    const formik = useFormik();
+
     const handleFormSubmit = (values) => {
         console.log(values);
     }
+
 
     return (
         <div className="max-w-md mx-auto mt-10 bg-white p-8 border border-gray-300 rounded-lg shadow-lg">
@@ -25,11 +29,13 @@ const BasicFormikControlledExample = () => {
             >
                 {({ errors, touched, isSubmitting }) => (
                     <Form className="space-y-6">
+
                         <div>
                             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                                 Email Address
                             </label>
                             <Field
+                                ref={email}
                                 type="email"
                                 id="email"
                                 name="email"
@@ -44,6 +50,7 @@ const BasicFormikControlledExample = () => {
                                 Password
                             </label>
                             <Field
+                                ref={password}
                                 type="password"
                                 id="password"
                                 name="password"
@@ -81,5 +88,5 @@ const BasicFormikControlledExample = () => {
     );
 };
 
-export default BasicFormikControlledExample;
+export default BasicUncontrolledFormExample;
 

@@ -1,9 +1,9 @@
 import './styles/index.css';
 
-import BasicFormikControlledExample from './pages/home/components/forms/formik-controlled-example';
+import { ReactHookFormExample } from './pages/home/components/forms/react-hook-form-example';
 
 function App() {
-  return <BasicFormikControlledExample />
+  return <ReactHookFormExample />
 
 }
 
