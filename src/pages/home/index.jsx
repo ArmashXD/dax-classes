@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Header from "../../components/ui/header";
-import MouseTracker from "./components/mouse-tracker";
+import { Link } from "react-router";
 
 
 const data = [
@@ -17,13 +17,8 @@ function HomePage() {
             <Header />
             <br />
             Number: {number}
-            <MouseTracker
-                setNumber={setNumber}
-                title={"test one"}
-                description={"test two"}
-            />
             <br />
-
+            <Link to="/about" >About</Link>
             {/* </> */}
         </>
     )
