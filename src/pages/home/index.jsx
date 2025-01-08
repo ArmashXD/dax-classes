@@ -14,7 +14,6 @@ function HomePage() {
     const [number, setNumber] = useState(0);
     return (
         <>
-            <Header />
             <br />
             Number: {number}
             <br />
