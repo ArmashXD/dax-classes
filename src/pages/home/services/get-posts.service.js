@@ -1,4 +1,4 @@
-import axiosInstance from "../../config/axios";
+import axiosInstance from "../../../config/axios";
 
 const getPosts = async () => {
   const response = await axiosInstance.get("/posts");

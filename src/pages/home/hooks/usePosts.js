@@ -1,5 +1,5 @@
 import { useState } from "react";
-import getPosts from "../../../services/posts/get-posts.service";
+import getPosts from "../services/get-posts.service";
 
 function usePosts() {
     const [posts, setPosts] = useState([]);
@@ -8,7 +8,6 @@ function usePosts() {
         const response = await getPosts();
         setPosts(response);
     }
-
 
     return {
         posts,

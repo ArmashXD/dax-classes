@@ -44,8 +44,8 @@ class AxiosInstance {
                         case 404:
                             console.log('Resource not found');
                             break;
-                        case 404:
-                            console.log('Resource not found');
+                        case 500:
+                            console.log('Internal Server Error');
                             break;
 
                     }
