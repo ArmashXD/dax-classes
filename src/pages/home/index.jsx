@@ -1,24 +1,24 @@
-import { useState } from "react";
-import Header from "../../components/ui/header";
+import { useEffect } from "react";
 import { Link } from "react-router";
+import usePosts from "./hooks/usePosts";
 
-
-const data = [
-    { title: 'title one', description: 'description one' },
-    { title: 'title two', description: 'description two' },
-    { title: 'title three', description: 'description three' },
-    { title: 'title four', description: 'description four' },
-]
 
 function HomePage() {
-    const [number, setNumber] = useState(0);
+    const { posts, getAllPosts } = usePosts()
+
+    useEffect(() => { getAllPosts() }, []);
+
     return (
         <>
-            <br />
-            Number: {number}
-            <br />
             <Link to="/about" >About</Link>
-            {/* </> */}
+            {
+                posts?.map((item, index) => (
+                    <div key={index}>
+                        <h1>{item?.title}</h1>
+                        <p>{item?.body}</p>
+                    </div>
+                ))
+            }
         </>
     )
 }

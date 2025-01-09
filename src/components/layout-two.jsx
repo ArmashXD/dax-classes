@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router';
+import { Outlet } from 'react-router';
 import Header from './ui/header';
 
 const LayoutTwo = () => {
